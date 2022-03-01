@@ -1,0 +1,16 @@
+.homepage{
+    padding: 20px 30px;
+
+}
+.product_list{
+    display: grid; 
+    grid-template-columns: repeat(4,auto);
+     grid-gap: 15px;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    margin-top: 20px;
+
+}
+.homepage h1{
+    text-align: center;
+}

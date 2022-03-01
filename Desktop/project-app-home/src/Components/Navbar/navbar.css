@@ -1,0 +1,35 @@
+.navbar{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: aqua;
+}
+.navbar h1{
+    color: blue;
+}
+.navbar .search{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    background-color: white;
+    padding:0 10px;
+    border-radius: 4px;
+}
+.navbar .search input{
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    font-size: 22px;
+}
+.navbar_right{
+    display: flex;
+    align-items: center;
+}
+.navbar_right h3{
+    margin-left: 20px;
+   margin-top: -7px;    
+}
