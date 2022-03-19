@@ -1,0 +1,26 @@
+.todo {
+  display: flex;
+  justify-content: center;
+}
+.todo_List {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.todo_List input {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  
+}
+.todo_List button {
+  width: 150px;
+  height: 55px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.basket p {
+  display: flex;
+  justify-content: center;
+}
