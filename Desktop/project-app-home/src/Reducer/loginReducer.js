@@ -12,10 +12,10 @@ export const loginReducer = (state, action) => {
     case LOGIN:
       return (state = {
         ...state,
-        infos:action.payload,
-        logIn:true
+        infos: action.payload,
+        logIn: true,
       });
- default:
-     return state;
+    default:
+      return state;
   }
 };

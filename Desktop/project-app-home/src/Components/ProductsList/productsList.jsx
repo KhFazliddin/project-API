@@ -2,7 +2,7 @@ import React from 'react'
 import "./productsList.css";
 import Product from '../Product/product'
 function ProductsList(props) {
-    const { id, category, title, image, rating, price, description } = props;
+    const { id, category, title, image,soni, rating, price, description } = props;
   return (
     <div className='products_list'>
     <Product 
@@ -14,9 +14,10 @@ function ProductsList(props) {
         description={description}
         price={price}
         category={category}
+        soni={soni}
      />
         </div>
   )
 }
 
-export default ProductsList;
+export default React.memo(ProductsList);

@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import ProductDetails from "../../pages/ProductDetails/productDetails";
 
 let api = "https://fakestoreapi.com/products";
 
 export const FetchAsyncProducts = createAsyncThunk(
   "products/FetchAsyncProducts",
   async() => {
-    const responce = await axios.get("https://fakestoreapi.com/products")
+    const responce = await axios
+    .get("https://fakestoreapi.com/products")
       .catch((err) => console.log(err.message));
     return responce.data;
   }
@@ -16,6 +16,7 @@ export const FetchProductDetails=createAsyncThunk(
   "products/FetchProductDetails",
   async(id)=>{
     const responce=await axios.get(`https://fakestoreapi.com/products${id}`)
+    .catch((err)=> console.log(err.message))
     return responce;
 
   }
@@ -26,6 +27,7 @@ const initialState = {
   chosenProductDetail:{},
   error:""
 };
+
 const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -42,17 +44,24 @@ const productsSlice = createSlice({
     console.log('loading')
 },
 [FetchAsyncProducts.fulfilled]:(state,action)=>{
-   return {...state,productsData:action.payload}
-    console.log("yuklandi")
+  const fullData=action.payload.map(item=>{
+    return {
+      ...item,
+      count:100,
+    };
+  });
+  return {...state,productsData:fullData}
 },
 [FetchAsyncProducts.rejected]:(state)=>{
     console.log("network error")
     return {...state,error:"network error"}
 },
 [FetchProductDetails.fulfilled]:(state,action)=>{
+
   return {...state,chosenProductDetail:action.payload}
 }
   },
 });
-export const { addProducts, addToBasket } = productsSlice.actions;
+
+export const {  addToBasket } = productsSlice.actions;
 export default productsSlice.reducer;

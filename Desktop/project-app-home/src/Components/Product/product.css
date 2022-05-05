@@ -19,6 +19,7 @@
     font-size: 18px;
     font-weight: bold;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
 }
 .product .count_btn{
     display: flex;
